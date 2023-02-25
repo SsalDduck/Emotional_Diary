@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  font-family: "ramen";
+  position: relative;
+  font-size: medium;
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "ramen";
+  src: url(./Ansungtangmyun-Bold.ttf);
+}
+.DiaryEditor {
+  text-align: center;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: beige;
+}
+.info {
+}
+.title {
+  height: 50px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.DiaryEditor::before {
+  background-image: url(./hanok-5830098.jpg);
+  background-size: cover;
+  opacity: 0.6;
+
+  width: 100%;
+  height: auto;
+
+  content: "";
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.user,
+.calender {
+  font-family: "ramen";
+  width: 200px;
+  margin-bottom: 30px;
+}
+.textArea {
+  width: 700px;
+  height: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  opacity: 0.8;
+  position: relative;
+}
+
+.DiaryEditor select {
+  text-align: center;
+  margin-bottom: 20px;
+  height: 25px;
+}
+.DiaryEditor button {
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* List CSS*/
+.DiaryList {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+/* DiaryItem CSS*/
+
+.DiaryItem {
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 15px;
+}
+.DiaryItem .info {
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+}
+.DiaryItem .date {
+  color: gray;
+}
+.DiaryItem .text {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 15px;
+}
