@@ -1,6 +1,11 @@
-import React, { useRef, useState } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 const DiaryEditor = ({ onAttache }) => {
+  /*onAttache의 얕은 비교로 랜더링이 빈번함 -> useCallback과 state를 함수형 업데이트로 해결
+  함수로 prop을 넘길때는 useCallback 사용 염두.*/
+  useEffect(() => {
+    /*랜더링 최적화 확인을 위한 useEffect console.log*/
+    console.log("DE render");
+  }, []);
   const [state, changeState] = useState({
     //react State 할당은 함수 내부에서 이뤄저야함d
     user: "사용자 이름을 입력해주세요",
@@ -8,18 +13,18 @@ const DiaryEditor = ({ onAttache }) => {
     date: "",
     emotion: "평범", //3
   });
-  const userInput = useRef(); // React에서 HTML 요소에 접근하는 방법, DOM을 리액트에서 사용 , 태그에 ref = {변수명} 으로 제어함.
-  const textInput = useRef(); //컴포넌트에서 특정 DOM 을 선택해야 할 때, ref 를 사용해야
-
+  const userInput = useRef(); // React에서 HTML 요소에 접근하는 방법, DOM을 리액트에서 사용하는 방법 , 태그에 ref = {변수명} 으로 제어함.
+  const textInput = useRef(); //ex) DiaryEditor Component에서 textarea DOM 을 선택해야 할 때, ref={textInput} 이런식
+  /** input tag의 onChange 핸들러, e는 이벤트 객체임*/
   const setState = (e) => {
-    //input tag의 입력을 State로 처리
+    //input ,text area tag의 입력을 State로 처리
     console.log(e); //Onchange로 받으면 이벤트 객체가 하나 들어옴 내가 원하는 대부분의 e.target.value일 것.
     changeState({
       ...state, // spread 연산자로 깔끔하게 처리
-      [e.target.name]: e.target.value, // [] 표기법 name이 문자열이므로 name을 state의 키로 똑같이 해서 이용
+      [e.target.name]: e.target.value, // [] 표기법, name이 문자열이므로 name을 state의 키로 똑같이 해서 이용
     });
   };
-
+  /**입력 누락을 감지하고 ,  changeState 호출*/
   const handleSubmit = () => {
     if (
       state.user.length === 0 ||
@@ -64,7 +69,7 @@ const DiaryEditor = ({ onAttache }) => {
           ref={textInput} //이 textarea요소에 접근하기 위한 useRef
           name="text"
           value={state.text} //보여지는건 value
-          onChange={setState} // 태그에 변화가생김(=이벤트 발생) , onChange 에 call back 함수로 첫 인자로 이벤트 객체가 넘어감
+          onChange={setState} // 태그에 변화가생김(=이벤트 발생) , onChange 에 call back 함수 첫 인자로 이벤트 객체가 넘어감
         />
       </div>
       <div>
@@ -88,4 +93,6 @@ const DiaryEditor = ({ onAttache }) => {
     </div>
   );
 };
-export default DiaryEditor;
+export default React.memo(DiaryEditor); // 본인의 props가 그대로면 별도의 랜더링을 하지 아니하는 Hooks
+//두번째 인자로 함수를 받는데 , 첫 인자로 이전 props 두번째 인자로 현재 props 를 넣어준다.
+//객체의 깊은 복사를 구현하고 same -> return 1;(=Not render)

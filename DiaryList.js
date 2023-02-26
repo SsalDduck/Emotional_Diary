@@ -1,7 +1,7 @@
 import React from "react";
 import DiaryItem from "./DiaryItem.js";
 const DiaryList = ({ diaryList, onDelete, onEdit }) => {
-  // 받는쪽은 부모와 동일하게 객체 디스트럭팅
+  // 받는쪽은 부모와 같은 이름 => 객체 디스트럭팅
 
   return (
     <div className="DiaryList">
