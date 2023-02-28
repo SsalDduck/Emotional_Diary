@@ -40,4 +40,4 @@
 > #### DiaryEditor.js
 >
 > App.js의 자식으로 사용자에게 일기 작성을 받아내는 주요 Component입니다.<br>
-> 또한 App.js에게 onAttache라는 diaryList 배열에 새로운 일기를 배열의 가장 앞에 추가하는 기능을 합니다.<br>
+> 또한 App.js에게 받은 onAttache라는 메서드로 diaryList 배열에 새로운 일기를 배열의 가장 앞에 추가하는 기능을 합니다.<br>
