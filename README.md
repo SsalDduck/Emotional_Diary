@@ -2,7 +2,9 @@
 
 > 이름과 일기를 작성 후 감정을 선택하고 저장하면 일기장이 저장이 됩니다.<br>
 > 누락된 정보가 있는 상황에서 저장을 시도한다면 해당 입력으로 제어가 옮겨가고 저장은 수행되지 않습니다.<br>
-> 일기장 밑에는 다른 사람들의 일기를 엿볼 수 있는 일기 목록들이 있습니다!<br><br>
+> 일기장 밑에는 다른 사람들의 일기를 엿볼 수 있는 일기 목록들이 있습니다!
+
+<br><br>
 <img width="1249" alt="Diary" src="https://user-images.githubusercontent.com/124281401/221821736-f3f05ec7-15c8-42ed-9c83-9b82b1a0c17d.png">
 <img width="1250" alt="List" src="https://user-images.githubusercontent.com/124281401/221821791-843b846a-950f-4332-b14a-a47c49cc1362.png">
 <br><br>
