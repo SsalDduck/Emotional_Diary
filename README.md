@@ -14,7 +14,7 @@
 <br>
 
 > #### App.js  
->최상위 컴포넌트입니다. 사용자들의 diaryList가 배열형식, State로 구현되어 있고,<br> 최초에는 "https://jsonplaceholder.typicode.com/comments" 에서 더미 데이터를 받아옵니다.<br> 
+>index.js 밑에 있는 사실상 최상위 컴포넌트입니다. 사용자들의 diaryList가 배열형식, State로 구현되어 있고,<br> 최초에는 "https://jsonplaceholder.typicode.com/comments" 에서 더미 데이터를 받아옵니다.<br> 
 >이 배열은 배열의 원소를 수정하거나 삭제 할수 있는 메서드와 함께, App.js의 자식 컴포넌트인 DiaryList 에게 props로 전달 됩니다.<br>
 
 <br>
